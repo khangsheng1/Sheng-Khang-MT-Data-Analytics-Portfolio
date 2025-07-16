@@ -1,90 +1,84 @@
-# Laboratory Excel Tools - Chemistry & Microbiology
+# Microbiology Positivity Tracking Toolkit
 
-This repository contains Excel tools and automation scripts developed during my work as a **Medical Technologist** to streamline chemistry and microbiology data management in the clinical laboratory. These resources support tracking reagent usage, monitoring inventory expiration dates, and analyzing microbiology test positivity rates.
+This repository contains tools and templates developed for tracking and reporting **microbiology test positivity rates**. These resources streamline the process of cleaning raw data, preparing it for analysis, and visualizing test positivity trends.
 
 ---
 
-## 📂 Repository Contents
+## 📁 Files Included
 
-### 1️⃣ Chemistry Usage Table
+### 1️⃣ Raw Data
 
-**File:** `Chemistry Usage Table.xlsx`
+**File:** `Microbiology - Raw Positivity Data.xlsx`
+
+- This file contains the unprocessed data exported directly from laboratory reporting systems.
+- Raw format includes extra header rows, mixed content, and unstructured test results.
+- Intended as the starting point before cleaning.
+
+---
+
+### 2️⃣ Data Cleaning Script
+
+**File:** `MicrobiologyRawDataCleaner.ts` (ExcelScript)
 
 **Purpose:**  
-- Track monthly reagent usage for chemistry analyzers.
-- Summarize total consumption across multiple tests.
-- Support monthly reporting and inventory planning.
+Automates cleanup of raw microbiology data to create a structured, tabular dataset.
 
-**Features:**  
-- Organized monthly tracking table.
-- Auto-calculating totals for quick consumption review.
-- Supports forecasting supply needs and identifying usage trends.
+**Key Functions:**  
+- Clears all formatting.
+- Deletes unnecessary header rows and keyword-based clutter.
+- Inserts structural empty rows for readability.
+- Separates test names, results counts, and total tests performed into dedicated columns.
+- Adds metadata columns (`Month`, `Year`, `Month Number`).
+- Produces a clean, analysis-ready dataset.
 
----
-
-### 2️⃣ Chemistry Inventory Expiration List
-
-**File:** `Chemistry - Inventory Expiration Date List.xlsx`
-
-**Purpose:**  
-- Track expiration dates of reagents and consumables.
-- Prevent expired materials from being used in testing.
-- Assist in proactive reordering and compliance documentation.
-
-**Features:**  
-- Simple table listing item names, lot numbers, quantities, and expiration dates.
-- Sortable columns for identifying at-risk inventory.
-- Supports monthly checks and documentation.
+**Usage:**  
+- Open the raw data file.
+- Run the script to generate structured, clean data.
 
 ---
 
-### 3️⃣ Microbiology Positivity Rate Tracker
+### 3️⃣ Cleaned Data Output
 
-**Files:**  
-- `Microbiology - Figures for Positivity by Test.xlsx`  
-- `Microbiology - Raw Positivity Data.xlsx`
+**File:** `Microbiology - Cleaned Data for Positivity by Test.xlsx`
 
-**Purpose:**  
-- Track and visualize positivity rates for microbiology PCR tests.
-- Identify trends, detect anomalies, and support infection control reporting.
-
-**Features:**  
-- Tabular organization by test type and month.
-- Built-in charts to visualize positivity trends.
-- Supports reporting to leadership and infection control.
+- Example of a completed, cleaned dataset after script execution.
+- Structured as:
+  - **Column A:** Test Name
+  - **Column B:** Result Type or Category
+  - **Column D:** Result Count
+  - **Column F:** Total Panel Tests Performed
+  - **Columns G, H, I:** Metadata (Month Name, Year, Month Number)
+- Ready for use in the positivity tracker file.
 
 ---
 
-## ⚙️ Automated Data Processing Script
+### 4️⃣ Positivity Tracker & Dashboard
 
-**Script Name:** `MicrobiologyRawDataCleaner.ts` (ExcelScript)
+**File:** `Microbiology - Figures for Positivity by Test.xlsx`
 
-**Purpose:**  
-- Clean and transform raw microbiology data exports into structured, tabular form for analysis.
-
-**Main Functions:**  
-- Clear all formatting for consistency.
-- Remove unwanted rows (empty rows, keyword-based rows).
-- Insert empty rows to improve data separation.
-- Reorganize test names, results, and counts into clear columns.
-- Fill down missing values to create a clean, analyzable dataset.
-- Add metadata columns for reporting (Month Name, Year, Month Number).
-
-**Usage Workflow:**  
-1. Export raw microbiology data.
-2. Run the ExcelScript to prepare the dataset.
-3. Load the cleaned data into the positivity tracker for reporting.
+- Contains pivot tables, charts, and summaries based on the cleaned dataset.
+- Visualizes test positivity trends over time.
+- Supports infection control reporting, internal quality reviews, and anomaly detection.
+- Designed for manual updates using cleaned datasets.
 
 ---
 
-## 💡 How These Tools Help
+## 🛠️ Typical Workflow
 
-These resources help simplify routine operational tasks in the clinical laboratory:
-- Improve accuracy and consistency in reagent tracking and inventory management.
-- Streamline monthly reporting processes.
-- Ensure timely action on soon-to-expire inventory.
-- Enable clear visualization of positivity rate trends to support clinical decision-making.
+1. **Export** raw data from lab system into `Microbiology - Raw Positivity Data.xlsx`.
+2. **Run** the `MicrobiologyRawDataCleaner.ts` ExcelScript to clean and structure the data.
+3. **Save** the cleaned output in `Microbiology - Cleaned Data for Positivity by Test.xlsx`.
+4. **Analyze & Report** using the dashboard and charts in `Microbiology - Figures for Positivity by Test.xlsx`.
 
 ---
 
-> All templates are customizable to fit your laboratory’s specific analyzers, tests, and reporting needs.
+## 🎯 Benefits
+
+- Standardizes positivity reporting for multiple microbiology tests.
+- Saves time during monthly reporting cycles.
+- Reduces errors from manual data cleaning.
+- Supports data-driven infection control monitoring.
+
+---
+
+> All files and templates can be customized to fit specific laboratory workflows and reporting needs.
