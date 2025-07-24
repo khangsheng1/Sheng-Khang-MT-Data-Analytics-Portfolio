@@ -38,7 +38,7 @@ b = 14818.1577
 
 ## 📷 Visual Output
 
-![Final Glucose Chart](insert/chart/image/path/here.png)
+![Final Glucose Chart](Glucose_Perfusion_Issue/Poor Perfusion POC Glucose Study.jpg)
 
 - 🟣 **POC Glucose Values**
 - 🟡 **POC Glucose < 70 mg/dL**
