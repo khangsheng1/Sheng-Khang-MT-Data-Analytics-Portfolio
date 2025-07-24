@@ -49,8 +49,13 @@ This repository contains a printable educational poster created for Point of Car
 
 ---
 
+## 🧰 Tools Used
+
+This poster was assembled using **Microsoft PowerPoint**, with original layout and formatting by the author. Clip art assets were generated using **Sora (ChatGPT’s image generation tool)** to enhance clarity and visual engagement.
+
+---
+
 ## 🛑 Disclaimer
 
-This material is for internal educational use within Mercy Hospital's POC department. No patient-specific information is contained in this document.
-
-
+This material is intended for internal educational use within Mercy Hospital's Point of Care (POC) department.  
+No patient-specific or protected health information is included in this document.
