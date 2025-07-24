@@ -40,13 +40,6 @@ b = 14818.1577
 
 ![Final Glucose Chart](https://github.com/khangsheng1/MT-Work/blob/main/Glucose_Perfusion_Issue/Poor%20Perfusion%20POC%20Glucose%20Study.jpg)
 
-- 🟣 **POC Glucose Values**
-- 🟡 **POC Glucose < 70 mg/dL**
-- 🟢 **Main Lab Glucose Values**
-- 🔴 **Main Lab Glucose < 70 mg/dL**
-- ➖ **Horizontal Line at 70 mg/dL**
-- ➰ **Dotted Trendline (with Error Bars)**
-
 ## 🧠 Interpretation
 
 The visualization clearly shows:
