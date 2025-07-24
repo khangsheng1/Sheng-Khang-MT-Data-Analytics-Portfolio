@@ -43,7 +43,7 @@ b = 14818.1577
 ## 🧠 Interpretation
 
 The visualization clearly shows:
-- **POC values are frequently lower than main lab readings**, especially in the presence of hypoperfusion.
+- **POC values are frequently inconsistent when compared to main lab readings**, especially in the presence of hypoperfusion.
 - Multiple **false hypoglycemic readings** are observed from POC data.
 - **Main Lab data offers a more reliable and stable trend**, making it crucial for clinical decision-making in similar patients.
 
@@ -52,12 +52,6 @@ The visualization clearly shows:
 - Quality assurance analysis in hospital POC programs
 - Education on limitations of bedside testing
 - Case review for patient safety events
-
-## 📈 Future Development Ideas
-
-- Add automatic data import and error detection
-- Build interactive Power BI dashboards
-- Introduce comparison zones for acceptable measurement deviation
 
 ---
 
