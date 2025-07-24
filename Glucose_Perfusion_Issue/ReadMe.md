@@ -18,6 +18,7 @@ The study seeks to:
 ## 📁 Files Included
 
 - `Patient Study Glucose.xlsx`: Contains the full dataset, trendline calculations, error bar data, and charting components.
+- 'Poor Perfusion POC Glucose Study.jpeg': Depicts a scatterplot of data collected from POC Glucometers and Main Lab Chemistry analyzer
 
 ## 📊 Regression Trendline (Main Lab Values)
 
