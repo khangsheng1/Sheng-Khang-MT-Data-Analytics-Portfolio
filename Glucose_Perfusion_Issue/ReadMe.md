@@ -27,6 +27,7 @@ A linear regression was calculated based on the main lab glucose values (serum),
 **Equation of Trendline:**
 
 y = m * x + b
+
 m = -0.321441303
 b = 14818.1577
 
