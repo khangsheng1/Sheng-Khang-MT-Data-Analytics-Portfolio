@@ -1,0 +1,81 @@
+function main(workbook: ExcelScript.Workbook) {
+  const sheet = workbook.getActiveWorksheet();
+  const range = sheet.getUsedRange();
+  let values = range.getValues();
+  const rowCount = values.length;
+  const columnCount = values[0].length;
+
+  // === Step 1: Identify necessary columns ===
+  const headers = values[0];
+  const dateTimeCol = headers.findIndex(h => h.toString().startsWith("Date/Time"));
+  const sampleIdCol = headers.findIndex(h => h.toString().startsWith("Sample ID"));
+  const glucoseCol = headers.findIndex(h => h.toString().startsWith("Glucose"));
+
+  // === Step 2: Hide all non-approved columns ===
+  const allowedPrefixes = [
+    "Date/Time",
+    "Sample ID",
+    "Glucose",
+    "Location",
+    "Operator Last Name",
+    "Operator First Name",
+    "Status",
+    "Flow Error",
+    "Sample Type"
+  ];
+
+  for (let col = 0; col < headers.length; col++) {
+    const header = headers[col]?.toString() || "";
+    const isAllowed = allowedPrefixes.some(prefix => header.startsWith(prefix));
+    if (!isAllowed) {
+      sheet.getRangeByIndexes(0, col, rowCount, 1).getEntireColumn().setColumnHidden(true);
+    }
+  }
+
+  // === Step 3: Sort by Sample ID (asc), then Date/Time (desc), excluding header ===
+  const sortRange = sheet.getRangeByIndexes(1, 0, rowCount - 1, columnCount);
+  sortRange.getSort().apply([
+    { key: sampleIdCol, ascending: true },
+    { key: dateTimeCol, ascending: false }
+  ]);
+
+  // Refresh values after sorting
+  values = sheet.getUsedRange().getValues();
+
+  // === Step 3.5: Alternate color sample ID groups ===
+  let currentId = values[1][sampleIdCol];
+  let highlight = true;
+  const fontColor = "#00B050";
+  for (let row = 1; row < rowCount; row++) {
+    const thisId = values[row][sampleIdCol];
+    if (thisId !== currentId) {
+      currentId = thisId;
+      highlight = !highlight;
+    }
+    if (highlight) {
+      sheet.getRangeByIndexes(row, sampleIdCol, 1, 1).getFormat().getFont().setColor(fontColor);
+    }
+  }
+
+  // === Step 4: Add <70? column ===
+  const output = values.map(row => {
+    const extended = [...row];
+    extended.push("");
+    return extended;
+  });
+  output[0][columnCount] = "<70?";
+
+  // Mark <70? and highlight rows if needed
+  for (let row = 1; row < rowCount; row++) {
+    const glucose = Number(values[row][glucoseCol]);
+    if (glucose < 70) {
+      output[row][columnCount] = "<70";
+      sheet.getRangeByIndexes(row, 0, 1, columnCount + 1).getFormat().getFill().setColor("#FF9999");
+    } else {
+      output[row][columnCount] = "";
+    }
+  }
+
+  // Write results back
+  sheet.getRangeByIndexes(0, 0, rowCount, columnCount + 1).setValues(output);
+}
