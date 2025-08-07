@@ -88,36 +88,30 @@ Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
 ```
 This measure divides the number of flagged quality events (QltyCode) by the total number of tests for the corresponding month from Table 2, allowing error rate tracking over time.
 
-🔗 Data Model Considerations
-Relationships:
-Table1 → DateTable:
-Table1[Date] → DateTable[Date] (Many to One)
+🔗 ### **Data Model Considerations**
 
-Table2 → DateTable:
-Table2[Month #] → DateTable[Month Number] (Many to One)
+| From Table | Column    | → | To Table  | Column         | Type        |
+| ---------- | --------- | - | --------- | -------------- | ----------- |
+| Table1     | `Date`    | → | DateTable | `Date`         | Many to One |
+| Table2     | `Month #` | → | DateTable | `Month Number` | Many to One |
 
-Filter Direction: Single direction from DateTable → Table1 and Table2
 
-This allows consistent filtering across visuals while preventing circular dependencies.
+- **Filter direction**: Single direction from DateTable → Table1 and Table2
 
-⚠️ Having different cardinality between the Date Table and the two sources can cause filters not to propagate consistently, especially when interacting with visuals from different tables. It’s best to ensure:
+- **Important**: Ensure DateTable has unique values and that relationships are one-to-many for stable filtering.
 
-The Date Table has unique date values
+⚠️ Having different cardinality between the Date Table and the two sources can cause filters not to propagate consistently, especially when interacting with visuals from different tables. 
 
-Relationships are one-to-many (Date → Table1, Date → Table2) if possible
-
-Filter direction is set appropriately (usually single direction unless there's a strong case)
-
-📌 Notes
-The dashboard screenshot (dashboard_screenshot.png) is included for quick reference.
-
-Data has been sanitized for privacy.
+📌 ### **Notes**
+The included dashboard screenshot (dashboard_screenshot.png) provides a high-level view of the layout and measures.
 
 Built entirely in Power BI Online.
 
-All measures, data transformations, and formatting were created by hand to ensure accuracy and maintainability.
+All data modeling, calculations, and formatting were done manually for flexibility and transparency.
 
-⚠️ Limitations
+Includes redacted visuals to ensure privacy and HIPAA compliance.
+
+⚠️ ### **Limitations**
 Patient-level data is partially sampled for performance and feasibility
 
 Manual data extraction from QML—there’s no automated export method
@@ -126,7 +120,7 @@ Table2 (monthly test volumes) is static and must be updated manually
 
 Relationships between tables may require fine-tuning if new sources are added
 
-🚀 Future Improvements
+🚀 ### **Future Improvements**
 Integrate an API-based export from QML to fully automate Table1 extraction
 
 Automate Table2 population from master instrument logs or LIS exports
@@ -135,7 +129,7 @@ Add dynamic annotations or alerts when monthly error rate exceeds threshold
 
 Enable drill-through report on operator and device performance
 
-🛠 Tools Used
+🛠 ### **Tools Used**
 Power BI Online
 
 DAX
@@ -146,5 +140,5 @@ Excel (pre-processing)
 
 Optional clipart/icons designed using Sora and PowerPoint
 
-🔒 Disclaimer
+🔒 ### **Disclaimer**
 This dashboard was created using anonymized, de-identified data for internal quality improvement purposes. All operator names have been redacted. No patient-identifiable information was used or shared. This dashboard does not reflect diagnostic performance or patient care outcomes.
