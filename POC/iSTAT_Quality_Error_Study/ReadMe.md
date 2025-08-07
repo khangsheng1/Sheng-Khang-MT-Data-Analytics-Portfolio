@@ -50,6 +50,23 @@ These DAX measures were developed to support tracking of errors and calculating 
 
 ### **Static Date Anchors**
 ```DAX
+DateTable = 
+ADDCOLUMNS (
+    CALENDAR (
+        MINX('Table1', 'Table1'[Date/Time]),  -- Earliest date in Table1
+        MAXX('Table1', 'Table1'[Date/Time])
+    ),
+    "Year", YEAR([Date]),
+    "Month Number", MONTH([Date]),
+    "Month", FORMAT([Date], "MMMM"),
+    "Year-Month", FORMAT([Date], "YYYY-MM"),
+    "Quarter", "Q" & FORMAT([Date], "Q"),
+    "Weekday", FORMAT([Date], "dddd"),
+    "Weekday Short", FORMAT([Date], "ddd"),
+    "Day", DAY([Date]),
+    "IsWeekend", IF(WEEKDAY([Date], 2) > 5, "Yes", "No")
+)
+
 Earliest Date (Static) = 
 CALCULATE(
     MIN('Table1'[Date/Time]),
