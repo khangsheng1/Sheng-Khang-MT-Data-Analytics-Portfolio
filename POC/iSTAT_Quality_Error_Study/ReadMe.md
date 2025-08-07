@@ -61,6 +61,7 @@ CALCULATE(
     MAX('Table1'[Date/Time]),
     ALL('Table1')
 )
+```
 
 These are displayed as static cards on the report — they do not change with slicer or visual filters, which is useful when users interact with the rest of the dashboard.
 
