@@ -88,7 +88,7 @@ Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
 ```
 This measure divides the number of flagged quality events (QltyCode) by the total number of tests for the corresponding month from Table 2, allowing error rate tracking over time.
 
-🔗 ### **Data Model Considerations**
+###🔗 **Data Model Considerations**
 
 | From Table | Column    | → | To Table  | Column         | Type        |
 | ---------- | --------- | - | --------- | -------------- | ----------- |
