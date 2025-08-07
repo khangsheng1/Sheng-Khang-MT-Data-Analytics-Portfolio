@@ -88,7 +88,7 @@ Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
 ```
 This measure divides the number of flagged quality events (QltyCode) by the total number of tests for the corresponding month from Table 2, allowing error rate tracking over time.
 
-### **Data Model Considerations**
+**Data Model Considerations**
 
 | From Table | Column    | → | To Table  | Column         | Type        |
 | ---------- | --------- | - | --------- | -------------- | ----------- |
@@ -102,7 +102,7 @@ This measure divides the number of flagged quality events (QltyCode) by the tota
 
 ⚠️ Having different cardinality between the Date Table and the two sources can cause filters not to propagate consistently, especially when interacting with visuals from different tables. 
 
-📌 ### **Notes**
+📌 **Notes**
 The included dashboard screenshot (dashboard_screenshot.png) provides a high-level view of the layout and measures.
 
 Built entirely in Power BI Online.
@@ -111,7 +111,7 @@ All data modeling, calculations, and formatting were done manually for flexibili
 
 Includes redacted visuals to ensure privacy and HIPAA compliance.
 
-⚠️ ### **Limitations**
+⚠️ **Limitations**
 Patient-level data is partially sampled for performance and feasibility
 
 Manual data extraction from QML—there’s no automated export method
@@ -120,7 +120,7 @@ Table2 (monthly test volumes) is static and must be updated manually
 
 Relationships between tables may require fine-tuning if new sources are added
 
-🚀 ### **Future Improvements**
+🚀 **Future Improvements**
 Integrate an API-based export from QML to fully automate Table1 extraction
 
 Automate Table2 population from master instrument logs or LIS exports
@@ -129,7 +129,7 @@ Add dynamic annotations or alerts when monthly error rate exceeds threshold
 
 Enable drill-through report on operator and device performance
 
-🛠 ### **Tools Used**
+🛠 **Tools Used**
 Power BI Online
 
 DAX
@@ -140,5 +140,5 @@ Excel (pre-processing)
 
 Optional clipart/icons designed using Sora and PowerPoint
 
-🔒 ### **Disclaimer**
+🔒 **Disclaimer**
 This dashboard was created using anonymized, de-identified data for internal quality improvement purposes. All operator names have been redacted. No patient-identifiable information was used or shared. This dashboard does not reflect diagnostic performance or patient care outcomes.
