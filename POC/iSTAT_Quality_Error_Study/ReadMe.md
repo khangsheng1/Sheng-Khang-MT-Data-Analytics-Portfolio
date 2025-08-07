@@ -21,7 +21,7 @@ This table contains patient test result data pulled directly from QML export, en
 - `Device`
 - `Serial Number`
 - `Location`
-- `Operator Full Name` [Redacted in this repository]
+- `Operator Full Name` *(Redacted in this repository)*
 - `QltyCode` *(device error flags)*
 - `Total # of Tests Ran` *(summary stat from QML — not patient-level data)*
 - `Total # of Tests Per Month` *(summary stat from QML)*
