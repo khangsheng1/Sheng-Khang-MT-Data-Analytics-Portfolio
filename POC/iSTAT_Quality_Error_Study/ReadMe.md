@@ -82,7 +82,7 @@ CALCULATE(
 
 Earliest Date and Latest Date are displayed as static cards on the report — they do not change with slicer or visual filters, which is useful when users interact with the rest of the dashboard.
 
-Quality Issue Rate
+### **Quality Issue Rate**
 ```
 Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
 ```
@@ -90,9 +90,15 @@ This measure divides the number of flagged quality events (QltyCode) by the tota
 
 🔗 Data Model Considerations
 Relationships:
-Table1 → Date Table: Many-to-many (due to multiple patient tests per date)
+Table1 → DateTable:
+Table1[Date] → DateTable[Date] (Many to One)
 
-Table2 → Date Table: Many-to-one (used as a lookup for static test counts)
+Table2 → DateTable:
+Table2[Month #] → DateTable[Month Number] (Many to One)
+
+Filter Direction: Single direction from DateTable → Table1 and Table2
+
+This allows consistent filtering across visuals while preventing circular dependencies.
 
 ⚠️ Having different cardinality between the Date Table and the two sources can cause filters not to propagate consistently, especially when interacting with visuals from different tables. It’s best to ensure:
 
@@ -111,6 +117,24 @@ Built entirely in Power BI Online.
 
 All measures, data transformations, and formatting were created by hand to ensure accuracy and maintainability.
 
+⚠️ Limitations
+Patient-level data is partially sampled for performance and feasibility
+
+Manual data extraction from QML—there’s no automated export method
+
+Table2 (monthly test volumes) is static and must be updated manually
+
+Relationships between tables may require fine-tuning if new sources are added
+
+🚀 Future Improvements
+Integrate an API-based export from QML to fully automate Table1 extraction
+
+Automate Table2 population from master instrument logs or LIS exports
+
+Add dynamic annotations or alerts when monthly error rate exceeds threshold
+
+Enable drill-through report on operator and device performance
+
 🛠 Tools Used
 Power BI Online
 
@@ -121,3 +145,6 @@ QML Export
 Excel (pre-processing)
 
 Optional clipart/icons designed using Sora and PowerPoint
+
+🔒 Disclaimer
+This dashboard was created using anonymized, de-identified data for internal quality improvement purposes. All operator names have been redacted. No patient-identifiable information was used or shared. This dashboard does not reflect diagnostic performance or patient care outcomes.
