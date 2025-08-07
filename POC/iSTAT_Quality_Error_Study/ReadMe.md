@@ -50,12 +50,12 @@ A manually created static table that provides the total number of tests performe
 These DAX measures were developed to support tracking of errors and calculating stable date anchors:
 
 ### **Static Date Anchors**
-DAX
-'''Earliest Date (Static) = 
+'''DAX
+Earliest Date (Static) = 
 CALCULATE(
     MIN('Table1'[Date/Time]),
     ALL('Table1')
-)'''
+)
 
 Latest Date (Static) = 
 CALCULATE(
