@@ -82,7 +82,7 @@ CALCULATE(
 
 Earliest Date and Latest Date are displayed as static cards on the report — they do not change with slicer or visual filters, which is useful when users interact with the rest of the dashboard.
 
-### **Quality Issue Rate**
+### **Error Rate Calculation**
 ```
 Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
 ```
