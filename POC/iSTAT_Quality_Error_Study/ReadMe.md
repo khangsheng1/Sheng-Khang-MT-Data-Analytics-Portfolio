@@ -42,7 +42,6 @@ A manually created static table that provides the total number of tests performe
 | August             | 8       | 584                 |
 | September–December | 9–12    | 0 (placeholder)     |
 
-
 ---
 
 ## 🧮 Key Measures
@@ -50,7 +49,7 @@ A manually created static table that provides the total number of tests performe
 These DAX measures were developed to support tracking of errors and calculating stable date anchors:
 
 ### **Static Date Anchors**
-'''DAX
+```DAX
 Earliest Date (Static) = 
 CALCULATE(
     MIN('Table1'[Date/Time]),
