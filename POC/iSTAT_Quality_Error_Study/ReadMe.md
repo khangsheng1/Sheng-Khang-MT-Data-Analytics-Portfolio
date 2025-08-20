@@ -25,7 +25,7 @@ This table contains patient test result data pulled directly from QML export, en
 - `QltyCode` *(device error flags)*
 - `Total # of Tests Ran` *(summary stat from QML — not patient-level data)*
 - `Total # of Tests Per Month` *(summary stat from QML)*
-- `Week Number`, `Month #`, `MonthName`, `Date` *(added for filtering/grouping)*
+- `Week Number`, `Month #`, `MonthName`, `Date`, `Year` *(added for filtering/grouping)*
 
 > Note: Due to the time it takes to export all raw patient-level test results (~20,000+ entries), only summary counts (`Total # of Tests`) are pulled from QML for most use cases.
 
