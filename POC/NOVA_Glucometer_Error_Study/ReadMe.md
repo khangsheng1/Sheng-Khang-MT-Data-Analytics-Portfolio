@@ -21,7 +21,7 @@ This repository contains a Power BI dashboard that tracks Nova glucometer error 
 
 ## Overview
 
-The dashboard uses a compact star-style model with a Date table, an event table for flagged tests, and a small reference table for monthly test counts. This lets you compute both absolute counts and error rates per month, location, device, and operator.
+The dashboard uses an event table for flagged tests and a small reference table for monthly test counts. This lets you compute both absolute counts and error rates per month, location, device, and operator.
 
 ---
 
@@ -49,9 +49,6 @@ Columns
 - `Month`  
 - `# of Test Per Month`  
 - `Total Tests` (optional, can mirror # of Test Per Month)
-
-### DateTable — Calendar for slicers and visuals
-Continuous daily calendar with common attributes for reporting. Columns include `Date`, `Year`, `Month Number`, `Month`, `Weekday`, and optional static bounds.
 
 **Relationships**
 
