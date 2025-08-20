@@ -97,11 +97,9 @@ This measure divides the number of flagged quality events (QltyCode) by the tota
 | Table1     | `Month #`    | → | Table 2 | `Month #`         | Many to One |
 
 
-- **Filter direction**: Single direction from DateTable → Table1 and Table2
+- **Filter direction**: Single direction from Table2 → Table1 
 
 - **Important**: Ensure DateTable has unique values and that relationships are one-to-many for stable filtering.
-
-⚠️ Having different cardinality between the Date Table and the two sources can cause filters not to propagate consistently, especially when interacting with visuals from different tables. 
 
 📌 **Notes**
 The included dashboard screenshot (dashboard_screenshot.png) provides a high-level view of the layout and measures.
