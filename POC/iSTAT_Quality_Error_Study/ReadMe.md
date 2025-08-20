@@ -2,7 +2,7 @@
 
 This repository contains a Power BI dashboard designed to monitor iSTAT patient testing data exported from QML. The goal of this dashboard is to identify quality code trends, highlight abnormal device behavior, and correlate device flags to testing volumes over time.
 
-![Dashboard_Screenshot](https://github.com/khangsheng1/MT-Work/blob/main/POC/iSTAT_Quality_Error_Study/iSTAT%20Quality%20Error%20Dashboard%20IMG.png)
+![Dashboard_Screenshot](https://github.com/khangsheng1/MT-Work/blob/main/POC/iSTAT_Quality_Error_Study/iSTAT%20Quality%20Error%20Dashboard%20IMG%202.png)
 
 > 🔒 *All usernames, PHI, and confidential data have been redacted from visualizations and source files.*
 
