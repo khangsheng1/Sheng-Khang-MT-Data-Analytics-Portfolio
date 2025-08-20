@@ -68,8 +68,6 @@ Earliest Date and Latest Date are displayed as static cards on the report — th
 
 ### **Error Rate Calculation**
 ```
-Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
-
 Total Tests = 
 VAR MonthsVisible = 
     SUMMARIZE(
@@ -87,6 +85,8 @@ CALCULATE(
         'Table2'[Month #]
     )
 )
+
+Calculation = [Count of QltyCode] / [Total Tests]
 ```
 This measure divides the number of flagged quality events (QltyCode) by the total number of tests for the corresponding month from Table 2, allowing error rate tracking over time.
 
@@ -94,8 +94,7 @@ This measure divides the number of flagged quality events (QltyCode) by the tota
 
 | From Table | Column    | → | To Table  | Column         | Type        |
 | ---------- | --------- | - | --------- | -------------- | ----------- |
-| Table1     | `Date`    | → | DateTable | `Date`         | Many to One |
-| Table2     | `Month #` | → | DateTable | `Month Number` | Many to One |
+| Table1     | `Month #`    | → | Table 2 | `Month #`         | Many to One |
 
 
 - **Filter direction**: Single direction from DateTable → Table1 and Table2
