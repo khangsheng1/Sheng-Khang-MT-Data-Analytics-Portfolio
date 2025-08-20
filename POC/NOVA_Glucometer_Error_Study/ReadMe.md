@@ -120,7 +120,7 @@ Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
 
 ## Notes and tips
 - The monthly totals in Table2 are static and must be updated when a new month completes.
-- Keep filter direction single from Table2 to Table1 when relating on ```Month #```. For multi-year reports, include ```Year``` in the relationship key or rely on the TREATAS pattern above
+- Keep filter direction single from Table2 to Table1 when relating on `Month #`. For multi-year reports, include `Year` in the relationship key or rely on the TREATAS pattern above
 
 ## Limitations
 - Patient level data is not included here and is redacted in production workbooks
