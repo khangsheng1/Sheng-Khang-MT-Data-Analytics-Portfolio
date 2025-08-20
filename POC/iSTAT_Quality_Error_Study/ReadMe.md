@@ -34,13 +34,13 @@ This table contains patient test result data pulled directly from QML export, en
 ### **Table 2** – Static Test Volume Reference
 A manually created static table that provides the total number of tests performed each month. This is used as a denominator when calculating error rates by month.
 
-| Month              | Month # | # of Test Per Month |
-| ------------------ | ------- | ------------------- |
-| January            | 1       | 2873                |
-| February           | 2       | 2671                |
-| ...                | ...     | ...                 |
-| August             | 8       | 584                 |
-| September–December | 9–12    | 0 (placeholder)     |
+| Month # | Month              | # of Test Per Month |
+| ------- | ------------------ | ------------------- |
+| 1       | January            | 2873                |
+| 2       | February           | 2671                |
+| ...     | ...                | ...                 |
+| 8       | August             | 584                 |
+| 9 - 12  | September–December | 0 (placeholder)     |
 
 ---
 
@@ -50,22 +50,6 @@ These DAX measures were developed to support tracking of errors and calculating 
 
 ### **Static Date Anchors**
 ```DAX
-DateTable = 
-ADDCOLUMNS (
-    CALENDAR (
-        MINX('Table1', 'Table1'[Date/Time]),  -- Earliest date in Table1
-        MAXX('Table1', 'Table1'[Date/Time])
-    ),
-    "Year", YEAR([Date]),
-    "Month Number", MONTH([Date]),
-    "Month", FORMAT([Date], "MMMM"),
-    "Year-Month", FORMAT([Date], "YYYY-MM"),
-    "Quarter", "Q" & FORMAT([Date], "Q"),
-    "Weekday", FORMAT([Date], "dddd"),
-    "Weekday Short", FORMAT([Date], "ddd"),
-    "Day", DAY([Date]),
-    "IsWeekend", IF(WEEKDAY([Date], 2) > 5, "Yes", "No")
-)
 
 Earliest Date (Static) = 
 CALCULATE(
@@ -85,6 +69,24 @@ Earliest Date and Latest Date are displayed as static cards on the report — th
 ### **Error Rate Calculation**
 ```
 Calculation = [Count of QltyCode] / [Sum of # of Test Per Month]
+
+Total Tests = 
+VAR MonthsVisible = 
+    SUMMARIZE(
+        'Table1',
+        'Table1'[Year],
+        'Table1'[Month #]
+    )
+
+RETURN
+CALCULATE(
+    SUM('Table2'[# of Test Per Month]),
+    TREATAS(
+        MonthsVisible,
+        'Table2'[Year],
+        'Table2'[Month #]
+    )
+)
 ```
 This measure divides the number of flagged quality events (QltyCode) by the total number of tests for the corresponding month from Table 2, allowing error rate tracking over time.
 
