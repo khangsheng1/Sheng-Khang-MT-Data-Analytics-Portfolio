@@ -11,7 +11,7 @@ This repository contains a Power BI dashboard that tracks Nova glucometer error 
 ## Repository contents
 
 1. `Nova Flagged Occurances.xlsx`  
-   Sample export with flagged events used to build the report  
+   Sample export with flagged events used to build the report. PHI and User Data redacted for privacy. 
 2. `Nova Glucometer Error Dashboard IMG.png`  
    Screenshot of the Power BI report  
 3. `ReadMe.md`  
