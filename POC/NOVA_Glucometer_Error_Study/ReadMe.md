@@ -75,6 +75,7 @@ CALCULATE(
     MAX('Table1'[Date/Time]),
     ALL('Table1')
 )
+```
 
 ### Total tests that respect the date slicer
 
@@ -104,4 +105,6 @@ CALCULATE(
 Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
 ```
 
-### Core visuals
+## Core visuals
+
+1. 
