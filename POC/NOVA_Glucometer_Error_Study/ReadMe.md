@@ -2,7 +2,7 @@
 
 This repository contains a Power BI dashboard that tracks Nova glucometer error events and monthly testing volumes. The goal is to surface error trends, highlight locations and operators with higher error counts, and place those counts in context with total tests by month.
 
-![Dashboard_Screenshot](https://github.com/khangsheng1/MT-Work/blob/main/POC/NOVA_Glucometer_Error_Study/Nova%20Glucometer%20Error%20Dashboard%20IMG.png)
+![Dashboard_Screenshot](https://github.com/khangsheng1/MT-Work/blob/main/POC/NOVA_Glucometer_Error_Study/Nova%20Glucometer%20Error%20Dashboard%20IMG2.png)
 
 > 🔒 All usernames, PHI, and confidential data are redacted in screenshots and source files.
 
