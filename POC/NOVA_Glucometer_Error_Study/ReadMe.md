@@ -107,17 +107,36 @@ Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
 
 ## Core visuals
 
-## Core visuals
-
 1. KPI cards for:
-  - Total Number of Tests  
-  - Total Errors  
-  - Error Rate  
-  - Estimated spend on errors (optional, based on a per-event cost you define)  
+     - Total Number of Tests  
+     - Total Errors  
+     - Error Rate  
+     - Estimated spend on errors (optional, based on a per-event cost you define)  
 2. Bar chart of **Flow Error** by count  
 3. Bar chart of **Location** by count  
 4. Table of **Operator Full Name** with counts (names redacted here)  
 5. Column chart of **Error Count by Month** using Month from the date dimension  
 6. Date range slicer bound to the calendar
 
+## Notes and tips
+- The monthly totals in Table2 are static and must be updated when a new month completes.
+- Keep filter direction single from Table2 to Table1 when relating on ```Month #```. For multi-year reports, include ```Year``` in the relationship key or rely on the TREATAS pattern above
 
+## Limitations
+- Patient level data is not included here and is redacted in production workbooks
+- Manual refresh of Table2 is required unless you automate extraction
+- Operator names are removed in shared screenshots for privacy
+
+## Future improvements
+- Automate population of Table2 from LIS or instrument logs
+- Add thresholds and conditional formatting for high error months
+- Drill-through pages for device and operator performance
+- Dataflow or pipeline for scheduled refresh in the service
+
+## Tools Used
+- Power BI Service
+- DAX
+- Excel for pre-processing Nova exports
+
+## Disclaimer
+This dashboard uses de-identified, internal quality improvement data. All operator names are redacted. No patient identifiable information is stored in this repository. The visualizations are for process monitoring and do not represent clinical performance or outcomes.
