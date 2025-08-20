@@ -76,3 +76,26 @@ CALCULATE(
     ALL('Table1')
 )
 
+## Total tests that respect the date slicer
+
+Maps visible months in the current filter context to the monthly totals in Table2. Works even if the slicer is on DateTable.
+
+```
+Total Tests =
+VAR MonthsVisible =
+    SUMMARIZE(
+        'Table1',
+        'Table1'[Year],
+        'Table1'[Month #]
+    )
+RETURN
+CALCULATE(
+    SUM('Table2'[# of Test Per Month]),
+    TREATAS(
+        MonthsVisible,
+        'Table2'[Year],
+        'Table2'[Month #]
+    )
+)
+```
+
