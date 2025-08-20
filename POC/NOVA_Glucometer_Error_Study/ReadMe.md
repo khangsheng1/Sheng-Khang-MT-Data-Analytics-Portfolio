@@ -76,7 +76,7 @@ CALCULATE(
     ALL('Table1')
 )
 
-## Total tests that respect the date slicer
+### Total tests that respect the date slicer
 
 Maps visible months in the current filter context to the monthly totals in Table2. Works even if the slicer is on DateTable.
 
@@ -98,4 +98,10 @@ CALCULATE(
     )
 )
 ```
+### Error count
 
+```
+Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
+```
+
+## Core visuals
