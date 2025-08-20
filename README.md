@@ -1,4 +1,4 @@
-# 🧪 Medical Technologist Projects Portfolio
+# 🧪 Medical Technologist Data Analytics Projects Portfolio
 
 This repository serves as a collection of tools, dashboards, and workflows I have developed as part of my work as a Medical Technologist. Each project focuses on improving laboratory operations, Point of Care (POC) quality monitoring, and compliance workflows through automation, visualization, or education.
 
