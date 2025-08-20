@@ -110,7 +110,7 @@ Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
 1. KPI cards for:
      - Total Number of Tests  
      - Total Errors  
-     - Error Rate  
+     - Error Rate %  
      - Estimated spend on errors (optional, based on a per-event cost you define)  
 2. Bar chart of **Flow Error** by count  
 3. Bar chart of **Location** by count  
