@@ -112,7 +112,7 @@ Error Rate % = DIVIDE([Count of Flow Error1],[Total Tests])
      - Total Errors  
      - Error Rate %  
      - Estimated spend on errors (optional, based on a per-event cost you define)  
-2. Bar chart of **Flow Error** by count  
+2. Bar chart of **Error** by count  
 3. Bar chart of **Location** by count  
 4. Table of **Operator Full Name** with counts (names redacted here)  
 5. Column chart of **Error Count by Month** using Month from the date dimension  
