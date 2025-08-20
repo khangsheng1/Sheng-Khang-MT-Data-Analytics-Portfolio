@@ -56,8 +56,6 @@ Columns
 |------------|----------|---|----------|----------|-------------|-----------|
 | Table1     | Month #  | → | Table2   | Month #  | Many to one | Single    |
 
-If you include DateTable in the model, connect DateTable to Table1 on `Date` and keep a virtual mapping from DateTable to Table2 inside the measures as described below. This avoids ambiguity from non-unique months.
-
 ---
 
 ## Measures
